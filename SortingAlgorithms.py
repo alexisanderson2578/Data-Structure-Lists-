@@ -46,29 +46,3 @@ def merge_sorted_lists(list_1, list_2):
 #list2 = [2, 4, 6]
 #print(merge_sorted_lists(list1, list2))
 
-def merge_sort(list): #actual merge sort of a list
-   if len(list) <= 1: #base case, once the elements have been broken into individual numbers it returns the list
-       return list
-
-   print("This is the original list: ", list)
-
-   mid = len(list)//2 #this is where the list gets halved
-
-   left_half = list[:mid]
-   print("This is the left half of the list: ", left_half)
-
-   right_half = list[mid:]
-   print("This is the right half of the list: ", right_half)
-
-   left_half = merge_sort(left_half) #recursive call to merge sort the left half
-
-   right_half = merge_sort(right_half) #recursive call to merge sort the right half
-
-   print(left_half) #this was put in to follow the process, can be deleted 
-   print(right_half)#this was put in to follow the process, can be deleted
-
-   return merge_sorted_lists(left_half, right_half) #calling the first function to merge and sort the first and second halves
-
-list = [26, 54, 93, 17, 77, 31, 44, 55, 20]
-print(merge_sort(list))
-
